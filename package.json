@@ -1,6 +1,6 @@
 {
   "name": "expand-to-hex-color",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Expands any string to valid full hex color",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -25,10 +25,13 @@
     "lib/**/*"
   ],
   "keywords": [
-    "typescript",
-    "npm",
-    "template",
-    "ts"
+    "conversion",
+    "hex",
+    "color",
+    "hex",
+    "delight",
+    "autocomplete",
+    "expand"
   ],
   "author": "Jan Toman",
   "license": "MIT",
