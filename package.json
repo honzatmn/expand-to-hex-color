@@ -1,5 +1,5 @@
 {
-  "name": "@honzatmn/expand-to-hex-color",
+  "name": "expand-to-hex-color",
   "version": "0.1.0",
   "description": "Expands any string to valid full hex color",
   "main": "lib/index.js",
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/honzatmn/expand-to-hex-value.git"
+    "url": "git+https://github.com/honzatmn/expand-to-hex-color.git"
   },
   "files": [
     "lib/**/*"
@@ -33,9 +33,9 @@
   "author": "Jan Toman",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/honzatmn/expand-to-hex-value/issues"
+    "url": "https://github.com/honzatmn/expand-to-hex-color/issues"
   },
-  "homepage": "https://github.com/honzatmn/expand-to-hex-value#readme",
+  "homepage": "https://github.com/honzatmn/expand-to-hex-color#readme",
   "devDependencies": {
     "@types/jest": "^29.4.0",
     "@types/node": "^18.13.0",
@@ -53,8 +53,6 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
-    "convert-css-color-name-to-hex": "^0.1.1",
-    "css-color-names": "^1.0.1",
-    "is-css-color-name": "^0.1.3"
+    "css-color-names": "^1.0.1"
   }
 }

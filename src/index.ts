@@ -1,9 +1,11 @@
+import * as cssColorNames from 'css-color-names';
+
 export function expandToHexColor(
   string: string,
   outputTextCase: 'uppercase'|'lowercase' = 'uppercase',
-  includeHexSymbol: boolean = true
+  includeHexSymbol = true
 ) {
-    const cssColorNames = require('css-color-names');
+
     let hex: string;
 
     // check if string is a valid css color name
