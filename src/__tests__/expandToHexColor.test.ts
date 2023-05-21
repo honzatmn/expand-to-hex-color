@@ -4,6 +4,7 @@ test('Expanding values', () => {
   expect(expandToHexColor('f')).toBe('#FFFFFF');
   expect(expandToHexColor('ff')).toBe('#FFFFFF');
   expect(expandToHexColor('fa')).toBe('#FAFAFA');
+  expect(expandToHexColor('0f')).toBe('#0F0F0F');
   expect(expandToHexColor('faf')).toBe('#FFAAFF');
   expect(expandToHexColor('F00')).toBe('#FF0000');
   expect(expandToHexColor('fff')).toBe('#FFFFFF');
@@ -15,15 +16,21 @@ test('Expanding values', () => {
   expect(expandToHexColor('#f00')).toBe('#FF0000');
   expect(expandToHexColor('#fff')).toBe('#FFFFFF');
   expect(expandToHexColor('#ffffff')).toBe('#FFFFFF');
-  expect(expandToHexColor('xxz')).toBe(null);
   expect(expandToHexColor('023')).toBe('#002233');
   expect(expandToHexColor('c13')).toBe('#CC1133');
   expect(expandToHexColor('ab77')).toBe('#AABB77');
+  expect(expandToHexColor('99')).toBe('#999999');
+});
+
+
+test('Invalid hex strings', () => {
   expect(expandToHexColor('xzz77')).toBe('#777777');
   expect(expandToHexColor('xzzc7')).toBe('#C7C7C7');
   expect(expandToHexColor('batman')).toBe('#BBAAAA');
-  expect(expandToHexColor('99')).toBe('#999999');
-
+  expect(expandToHexColor('invalid string')).toBe('#ADADAD');
+  expect(expandToHexColor('')).toBe(null);
+  expect(expandToHexColor(' ')).toBe(null);
+  expect(expandToHexColor('xxz')).toBe(null);
 });
 
 test('Converting names to hex', () => {
@@ -36,7 +43,7 @@ test('Converting names to hex', () => {
 
 
 test('Return as lowercase', () => {
-  expect(expandToHexColor('c13', 'lowercase')).toBe('#cc1133');
+  expect(expandToHexColor('C13', 'lowercase')).toBe('#cc1133');
   expect(expandToHexColor('ab77', 'lowercase')).toBe('#aabb77');
   expect(expandToHexColor('xzz7a', 'lowercase')).toBe("#7a7a7a");
   expect(expandToHexColor('xzzc7', 'lowercase')).toBe("#c7c7c7");
