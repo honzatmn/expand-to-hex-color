@@ -54,5 +54,5 @@ expandToHexColor(' '); // no valid hex-characters, returns null
 | Property           | Values                           | Default value | Description                                              |
 |--------------------|----------------------------------|---------------|----------------------------------------------------------|
 | `string`           | `string`                         | N/A           | String to be converted to a hex color.                   |
-| `outputTextCase`   | `'uppercase' &#124; 'lowercase'` | `'uppercase'` | The output text case for color.                          |
+| `outputTextCase`   | `'uppercase'` &#124; `'lowercase'` | `'uppercase'` | The output text case for color.                          |
 | `includeHexSymbol` | `boolean`                        | `true`        | Whether to include the `#` symbol before the color code. |
