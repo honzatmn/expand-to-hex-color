@@ -35,10 +35,14 @@ test('Invalid hex strings', () => {
 
 test('Converting names to hex', () => {
   expect(expandToHexColor('red')).toBe('#FF0000');
+  expect(expandToHexColor('RED')).toBe('#FF0000');
   expect(expandToHexColor('blue')).toBe('#0000FF');
   expect(expandToHexColor('aliceblue')).toBe('#F0F8FF');
   expect(expandToHexColor('purple')).toBe('#800080');
+  expect(expandToHexColor('Purple')).toBe('#800080');
+  expect(expandToHexColor('PURPLE')).toBe('#800080');
   expect(expandToHexColor('linen')).toBe('#FAF0E6');
+  expect(expandToHexColor('LINeN')).toBe('#FAF0E6');
 });
 
 

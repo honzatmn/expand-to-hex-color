@@ -1,6 +1,6 @@
 {
   "name": "expand-to-hex-color",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Expands any string to valid full hex color",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

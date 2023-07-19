@@ -9,8 +9,8 @@ export function expandToHexColor(
     let hex: string;
 
     // check if string is a valid css color name
-    if (cssColorNames[string]) {
-        hex = cssColorNames[string].replace("#", "");
+    if (cssColorNames[string.toLowerCase()]) {
+        hex = cssColorNames[string.toLowerCase()].replace("#", "");
     } else {
         // Remove the hash symbol if it exists + remove all non-hex characters
         hex = string.replace("#", "").replace(/[^0-9a-fA-F]/g, "");
