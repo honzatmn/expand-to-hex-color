@@ -35,7 +35,7 @@ export function expandToHexColor(
     }
 
     // A final check to make sure the hex value is valid
-    if (hex.length === 6) {
+    if (hex.length === 6 || hex.length === 8) {
         if (includeHexSymbol) {
             hex = `#${hex}`;
         }
