@@ -26,16 +26,24 @@ export function expandToHexColor(
         }
 
         // If the hex value has 3 characters, expand it to 6 characters
-        if (hex.length >= 3 && hex.length <= 5) {
-            hex = hex.substring(0, 3)
-              .split("")
-              .map((char) => char + char)
-              .join("");
+        if (hex.length === 3 || hex.length === 5) {
+          hex = hex
+            .substring(0, 3)
+            .split("")
+            .map((char) => char + char)
+            .join("");
+        }
+
+        if (hex.length === 4) {
+          hex = hex
+            .split("")
+            .map((char) => char + char)
+            .join("");
         }
     }
 
     // A final check to make sure the hex value is valid
-    if (hex.length === 6) {
+    if (hex.length === 6 || hex.length === 8) {
         if (includeHexSymbol) {
             hex = `#${hex}`;
         }
