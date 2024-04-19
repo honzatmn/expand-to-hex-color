@@ -29,6 +29,7 @@ expandToHexColor('0ff'); // returns '#00FFFF'
 expandToHexColor('000000'); // returns '#000000'
 expandToHexColor('ffffff'); // returns '#FFFFFF'
 expandToHexColor('00000000'); // returns '#000000'
+expandToHexColor('ab77'); // returns '#AABB7777' (HEX8)
 
 /* Converts color name to hex */
 expandToHexColor('red'); // returns '#FF0000'

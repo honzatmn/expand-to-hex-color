@@ -31,7 +31,7 @@ test('Invalid hex strings', () => {
   expect(expandToHexColor('')).toBe(null);
   expect(expandToHexColor(' ')).toBe(null);
   expect(expandToHexColor('xxz')).toBe(null);
-  expect(expandToHexColor('xxz')).toBe(null);
+  expect(expandToHexColor('xxxz')).toBe(null);
 });
 
 test('Converting names to hex', () => {
