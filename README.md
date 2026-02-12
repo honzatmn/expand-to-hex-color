@@ -43,6 +43,11 @@ expandToHexColor('xzzc7', 'lowercase'); // returns '#c7c7c7'
 expandToHexColor('C13', 'lowercase'); // returns '#cc1133'
 expandToHexColor('c13', 'lowercase', false); // returns 'cc1133' (no hex symbol)
 
+/* Extend with custom color mappings (e.g. design tokens, theme colors) */
+expandToHexColor('primary', 'uppercase', true, { primary: '#3498db' }); // returns '#3498DB'
+expandToHexColor('danger', 'lowercase', true, { danger: 'FF0000' }); // returns '#ff0000'
+expandToHexColor('red', 'uppercase', true, { red: '#CC0000' }); // returns '#CC0000' (overrides CSS name)
+
 /* Fallback for any hex-invalid string (removes non-hex characters first) */
 expandToHexColor('batman'); // 'batman' -> 'baa' -> returns '#BBAAAA'
 expandToHexColor('invalid string'); // 'invalid string' -> 'ad' -> returns '#ADADAD'
@@ -57,3 +62,4 @@ expandToHexColor(' '); // no valid hex-characters, returns null
 | `string`           | `string`                         | N/A           | String to be converted to a hex color.                   |
 | `outputTextCase`   | `'uppercase'` &#124; `'lowercase'` | `'uppercase'` | The output text case for color.                          |
 | `includeHexSymbol` | `boolean`                        | `true`        | Whether to include the `#` symbol before the color code. |
+| `customColorMapping` | `Record<string, string>`       | `undefined`   | Extend with custom token-to-hex mappings (e.g. design tokens, theme colors). Checked before CSS names. |

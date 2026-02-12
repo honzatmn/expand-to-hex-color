@@ -3,13 +3,18 @@ import * as cssColorNames from 'css-color-names';
 export function expandToHexColor(
   string: string,
   outputTextCase: 'uppercase'|'lowercase' = 'uppercase',
-  includeHexSymbol = true
+  includeHexSymbol = true,
+  customColorMapping?: Record<string, string>
 ) {
 
     let hex: string;
 
+    // check if string matches a custom color mapping (e.g. design tokens, theme colors)
+    if (customColorMapping?.[string.toLowerCase()]) {
+        hex = customColorMapping[string.toLowerCase()].replace("#", "");
+    }
     // check if string is a valid css color name
-    if (cssColorNames[string.toLowerCase()]) {
+    else if (cssColorNames[string.toLowerCase()]) {
         hex = cssColorNames[string.toLowerCase()].replace("#", "");
     } else {
         // Remove the hash symbol if it exists + remove all non-hex characters

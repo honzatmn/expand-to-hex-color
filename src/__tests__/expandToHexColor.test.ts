@@ -61,3 +61,30 @@ test('No hex symbol + lowercase', () => {
   expect(expandToHexColor('xzzc7', 'lowercase', false)).toBe('c7c7c7');
   expect(expandToHexColor('batman', 'lowercase', false)).toBe('bbaaaa');
 });
+
+test('Custom color mappings', () => {
+  const customColorMapping = { primary: '#3498db', danger: 'FF0000', accent: '#10B981' };
+
+  // basic lookup
+  expect(expandToHexColor('primary', 'uppercase', true, customColorMapping)).toBe('#3498DB');
+  expect(expandToHexColor('danger', 'uppercase', true, customColorMapping)).toBe('#FF0000');
+  expect(expandToHexColor('accent', 'uppercase', true, customColorMapping)).toBe('#10B981');
+
+  // case-insensitive lookup
+  expect(expandToHexColor('PRIMARY', 'uppercase', true, customColorMapping)).toBe('#3498DB');
+  expect(expandToHexColor('Danger', 'uppercase', true, customColorMapping)).toBe('#FF0000');
+
+  // overrides CSS color names
+  const overrides = { red: '#CC0000' };
+  expect(expandToHexColor('red', 'uppercase', true, overrides)).toBe('#CC0000');
+
+  // interaction with outputTextCase
+  expect(expandToHexColor('primary', 'lowercase', true, customColorMapping)).toBe('#3498db');
+
+  // interaction with includeHexSymbol
+  expect(expandToHexColor('primary', 'uppercase', false, customColorMapping)).toBe('3498DB');
+
+  // falls through to normal behaviour when token not in map
+  expect(expandToHexColor('fff', 'uppercase', true, customColorMapping)).toBe('#FFFFFF');
+  expect(expandToHexColor('blue', 'uppercase', true, customColorMapping)).toBe('#0000FF');
+});
